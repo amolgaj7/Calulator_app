@@ -1,0 +1,37 @@
+<resources>
+
+    <style name="Theme.Calculator" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#1C1C1E</item>
+        <item name="colorPrimaryDark">#000000</item>
+        <item name="colorAccent">#FF9500</item>
+        <item name="android:windowBackground">@color/calc_background</item>
+    </style>
+
+    <style name="CalcButtonBase">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_margin">6dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:elevation">0dp</item>
+    </style>
+
+    <style name="CalcButtonNumber" parent="CalcButtonBase">
+        <item name="android:backgroundTint">@color/calc_number</item>
+        <item name="android:textColor">@color/calc_text_white</item>
+    </style>
+
+    <style name="CalcButtonFunction" parent="CalcButtonBase">
+        <item name="android:backgroundTint">@color/calc_function</item>
+        <item name="android:textColor">@color/calc_text_black</item>
+    </style>
+
+    <style name="CalcButtonOperator" parent="CalcButtonBase">
+        <item name="android:backgroundTint">@color/calc_operator</item>
+        <item name="android:textColor">@color/calc_text_white</item>
+    </style>
+
+    <style name="CalcButtonEquals" parent="CalcButtonOperator" />
+
+</resources>
