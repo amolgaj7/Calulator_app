@@ -36,3 +36,5 @@ CalculatorApp/
 - No external calculator libraries — all logic is in `MainActivity.java`
 - If Android Studio asks to update the Gradle version or Android Gradle Plugin,
   accepting the suggestion is fine.
+
+  I have modifid to check the git diff and git status
