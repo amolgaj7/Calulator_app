@@ -1,0 +1,8 @@
+<resources>
+    <color name="calc_background">#1C1C1E</color>
+    <color name="calc_number">#333333</color>
+    <color name="calc_function">#A5A5A5</color>
+    <color name="calc_operator">#FF9500</color>
+    <color name="calc_text_white">#FFFFFF</color>
+    <color name="calc_text_black">#000000</color>
+</resources>
