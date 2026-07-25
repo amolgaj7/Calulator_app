@@ -38,3 +38,5 @@ CalculatorApp/
   accepting the suggestion is fine.
 
   I have modifid to check the git diff and git status
+
+0065a6a2ff16a2f96e89f39f16dbf43ab57e9f65
