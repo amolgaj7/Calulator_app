@@ -1,0 +1,42 @@
+version: "3.8"
+services:
+  calculator-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: calculator-app:latest
+    container_name: calculator-app
+    volumes:
+      - ./data:/data
+    ports:
+      - "8080:8080"
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - calculator-net
+
+  db:
+    image: postgres:16
+    container_name: db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: calculator
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: on-failure
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - calculator-net
+
+networks:
+  calculator-net:
+    driver: bridge
