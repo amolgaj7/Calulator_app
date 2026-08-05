@@ -2,6 +2,10 @@
 pipeline {
     agent { label 'agent' }
 
+     options {
+        skipDefaultCheckout(true)
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -13,7 +17,7 @@ pipeline {
                     git --version
                 '''
                 script{
-                    checkout(
+                    gitCheckout(
                         'https://github.com/amolgaj7/Calulator_app.git',
                         'master'
                     )
