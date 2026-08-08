@@ -8,6 +8,9 @@ pipeline {
 
      options {
         skipDefaultCheckout(true)
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+        disableConcurrentBuilds()
+        timestamps(time: true, format: "yyyy-MM-dd HH:mm:ss")
     }
 
     stages {
@@ -20,6 +23,9 @@ pipeline {
                     java -version
                     git --version
                 '''
+                script{
+                    gitCheckout('https://github.com/amolgaj7/Calulator_app.git', 'master')
+                }
                     
                 }
             }
