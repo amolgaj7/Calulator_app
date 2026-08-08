@@ -1,6 +1,10 @@
 @Library('Calulator_app') _
 pipeline {
     agent { label 'agent' }
+    Environment{
+        APP_NAME = 'Calculator_app'
+        SONARQUBE_SERVER = 'sonarqube'
+    }
 
      options {
         skipDefaultCheckout(true)
@@ -16,11 +20,6 @@ pipeline {
                     java -version
                     git --version
                 '''
-                script{
-                    gitCheckout(
-                        'https://github.com/amolgaj7/Calulator_app.git',
-                        'master'
-                    )
                     
                 }
             }
