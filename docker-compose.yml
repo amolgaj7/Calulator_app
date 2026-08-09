@@ -1,5 +1,7 @@
 version: "3.8"
+
 services:
+
   calculator-app:
     build:
       context: .
@@ -34,6 +36,15 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - calculator-net
+
+  jenkins-agent:
+    image: jenkins-agent:latest
+    container_name: jenkins-agent
+    ports:
+      - "2222:22"
+    restart: unless-stopped
     networks:
       - calculator-net
 

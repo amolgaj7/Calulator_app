@@ -7,11 +7,11 @@ pipeline {
     }
 
      options {
+        timestamps()
         skipDefaultCheckout(true)
         buildDiscarder(logRotator(numToKeepStr: '10'))
         disableConcurrentBuilds()
         timeout(time: 1, unit: 'HOURS')
-        timestamps()
     }
 
     stages {
@@ -30,5 +30,10 @@ pipeline {
                     
                 }
             }
+        stage('build'){
+            steps {
+                app_build()
+            }
         }
     }
+}
