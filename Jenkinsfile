@@ -35,5 +35,10 @@ pipeline {
                 app_build()
             }
         }
+        stage('SAST Security Sanity Check') {
+            steps {
+                sast_scan()
+            }
+        }
     }
 }
