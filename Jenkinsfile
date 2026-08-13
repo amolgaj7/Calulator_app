@@ -1,4 +1,4 @@
-@Library('Calculator_app@master') _
+@Library('Calculator_app') _
 pipeline {
     agent { label 'Ubantu_machine' }
     environment{
