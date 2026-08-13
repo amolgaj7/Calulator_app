@@ -1,4 +1,4 @@
-@Library('Calulator_app') _
+@Library('Calculator_app@master') _
 pipeline {
     agent { label 'agent' }
     environment{
