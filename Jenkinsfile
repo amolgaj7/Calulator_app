@@ -1,4 +1,3 @@
-@Library('Calculator_app') _
 pipeline {
     agent { label 'Ubantu_machine' }
     environment{
@@ -24,21 +23,21 @@ pipeline {
                     java -version
                     git --version
                 '''
-                script{
-                    gitCheckout('https://github.com/amolgaj7/Calulator_app.git', 'master')
-                }
+                // script{
+                //     gitCheckout('https://github.com/amolgaj7/Calulator_app.git', 'master')
+                // }
                     
                 }
             }
-        stage('build'){
-            steps {
-                app_build()
-            }
-        }
-        stage('SAST Security Sanity Check') {
-            steps {
-                sast_scan()
-            }
-        }
+        // stage('build'){
+        //     steps {
+        //         app_build()
+        //     }
+        // }
+        // stage('SAST Security Sanity Check') {
+        //     steps {
+        //         sast_scan()
+        //     }
+        // }
     }
 }
