@@ -1,3 +1,4 @@
+@Library('Calculator_app@master') _
 pipeline {
     agent { label 'Ubantu_machine' }
     environment{
@@ -23,9 +24,9 @@ pipeline {
                     java -version
                     git --version
                 '''
-                // script{
-                //     gitCheckout('https://github.com/amolgaj7/Calulator_app.git', 'master')
-                // }
+                script{
+                    gitCheckout('https://github.com/amolgaj7/Calulator_app.git', 'master')
+                }
                     
                 }
             }
