@@ -1,6 +1,6 @@
 @Library('Calculator_app@master') _
 pipeline {
-    agent { label 'agent' }
+    agent { label 'Ubantu_machine' }
     environment{
         APP_NAME = 'Calculator_app'
         SONARQUBE_SERVER = 'sonarqube'
