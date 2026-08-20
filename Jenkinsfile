@@ -1,13 +1,13 @@
 @Library('Shared_library') _
 pipeline {
-    agent { label 'Ubantu_machine' }
+    agent { label 'root' }
     environment{
         APP_NAME = 'Calculator_app'
         SONARQUBE_SERVER = 'sonarqube'
     }
 
      options {
-        timestamps()
+        //timestamps()
         skipDefaultCheckout(true)
         buildDiscarder(logRotator(numToKeepStr: '10'))
         disableConcurrentBuilds()
