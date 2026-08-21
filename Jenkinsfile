@@ -31,25 +31,25 @@ pipeline {
                 }
             }
 
-stage('SonarQube Analysis') {
-    steps {
-        withSonarQubeEnv('sonarqube') {
-            // Navigate into the root of the Android project
-            dir('CalculatorApp') {
-                // Tip: It's highly recommended to use the Gradle wrapper (./gradlew) for Android projects
-                sh 'gradle sonarqube --no-daemon --stacktrace' 
+// stage('SonarQube Analysis') {
+//     steps {
+//         withSonarQubeEnv('sonarqube') {
+//             // Navigate into the root of the Android project
+//             dir('CalculatorApp') {
+//                 // Tip: It's highly recommended to use the Gradle wrapper (./gradlew) for Android projects
+//                 sh 'gradle sonarqube --no-daemon --stacktrace --max-workers=2' 
                 
-                // Or if you strictly want to use your global gradle installation:
-                // sh 'gradle sonarqube --no-daemon --stacktrace'
+//                 // Or if you strictly want to use your global gradle installation:
+//                 // sh 'gradle sonarqube --no-daemon --stacktrace'
+//             }
+//         }
+//     }
+// }
+        stage('build'){
+            steps {
+                app_build()
             }
         }
-    }
-}
-        // stage('build'){
-        //     steps {
-        //         app_build()
-        //     }
-        // }
         // stage('SAST Security Sanity Check') {
         //     steps {
         //         sast_scan()

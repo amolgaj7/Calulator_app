@@ -138,7 +138,7 @@ stage('build') {
         gradle --version
 
         echo "===== Cleaning Project ====="
-
+        
         gradle clean --no-daemon
 
         echo "===== Building APK ====="
